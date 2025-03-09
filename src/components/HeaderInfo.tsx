@@ -1,7 +1,7 @@
 interface HeaderInfoProps {
   Icon: React.ReactNode;
   title: string;
-  theme?: 'dark' | 'light';
+  theme: string | undefined;
 }
 
 const HeaderInfo = ({Icon, title, theme}: HeaderInfoProps) => {

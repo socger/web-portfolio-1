@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import data from "../data/header";
+import data from "../data/data_header";
 import { useTheme } from "next-themes";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsTerminalFill } from "react-icons/bs";

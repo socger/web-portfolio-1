@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import Heading from "./Heading";
-import data from "@/data/contacts";
+import data from "@/data/data_contacts";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";

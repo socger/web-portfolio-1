@@ -1,6 +1,8 @@
 import About from "@/components/About";
 import Contacts from "@/components/Contacts";
 import Header from "@/components/Headers";
+import Skills from "@/components/Skills";
+import WorkHistory from "@/components/WorkHistory";
 
 export default function Home() {
 
@@ -10,6 +12,8 @@ export default function Home() {
         <Header />
         <Contacts />
         <About />
+        <Skills />
+        <WorkHistory />
       </div>
     </main>
   );
