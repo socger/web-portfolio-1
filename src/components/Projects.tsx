@@ -8,17 +8,7 @@ import Image from "next/image";
 import { RxOpenInNewWindow } from "react-icons/rx";
 import Modal from "./Modal";
 import { useState } from "react";
-
-interface ProjectType {
-  id: number;
-  title: string;
-  image: string;
-  description: string;
-  skills: { id: number; name: string; image: string }[];
-  source_code: string;
-  demo: string;
-}
-
+import { ProjectType } from "@/interfaces/interface_project_type";
 
 const Projects = () => {
   const { theme } = useTheme();
@@ -31,7 +21,12 @@ const Projects = () => {
 
   return (
     <>
-      <Modal theme={theme}/>
+      <Modal 
+        state={state}
+        details={details}
+        toggleModal={toggleModal}
+        theme={theme}
+      />
 
       <SectionWrapper theme={theme}>
         <Heading theme={theme}>projects</Heading>
@@ -81,7 +76,6 @@ const Projects = () => {
                   ${theme === "dark" ? "text-zinc-400" : "text-zinc-500"}
                   mt-2
                 `}
-
               >
                 { 
                   project.description.length > 100 
