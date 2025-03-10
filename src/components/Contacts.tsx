@@ -35,7 +35,10 @@ const Contacts = () => {
             target="_blank" 
             className={`
               flex items-center space-x-2
-              ${theme === "dark" ? "bg-zinc-600" : "bg-zinc-200"}
+              ${theme === "dark" 
+                ? "bg-zinc-600 hover:text-white" 
+                : "bg-zinc-200 hover:text-black"
+              }
               px-3 py-2
             `}
           >
