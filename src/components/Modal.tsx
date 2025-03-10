@@ -68,7 +68,7 @@ const Modal = (
                     theme={theme}
                     key={skill.id} 
                   />
-                ))}    ))}
+                ))}
               </div>
             </div>
 
