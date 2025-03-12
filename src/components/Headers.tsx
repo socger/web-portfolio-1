@@ -1,16 +1,18 @@
-"use client";
-
 import Image from "next/image";
 import data from "../data/data_header";
-import { useTheme } from "next-themes";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsTerminalFill } from "react-icons/bs";
 import { IoIosSchool } from "react-icons/io";
 import HeaderInfo from "./HeaderInfo";
 
-const Header = () => {
+const Header = (
+  {
+    theme
+  }: {
+    theme: string | undefined
+  }
+) => {
   const { image, name, jobTitle, address, experience, education } = data;
-  const { theme } = useTheme();
 
   return (
     <header 

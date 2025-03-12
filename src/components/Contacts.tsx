@@ -1,6 +1,3 @@
-"use client";
-
-import { useTheme } from "next-themes";
 import Heading from "./Heading";
 import data from "@/data/data_contacts";
 import Link from "next/link";
@@ -16,9 +13,13 @@ import { MdEmail } from "react-icons/md";
 import { FaRegUserCircle } from "react-icons/fa";
 import SectionWrapper from "./SectionWrapper";
 
-const Contacts = () => {
-  const { theme } = useTheme();
-
+const Contacts = (
+  {
+    theme
+  }: {
+    theme: string | undefined
+  }
+) => {
   return (
     <SectionWrapper theme={theme} >
       <Heading 

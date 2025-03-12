@@ -1,15 +1,16 @@
-"use client";
-
-import { useTheme } from "next-themes";
 import Heading from "./Heading";
 import SectionWrapper from "./SectionWrapper";
 import data from "@/data/data_work";
 import Image from "next/image";
 import SkillComponent from "./SkillComponent";
 
-const WorkHistory = () => {
-  const { theme } = useTheme();
-
+const WorkHistory = (
+  {
+    theme
+  }: {
+    theme: string | undefined
+  }
+) => {
   return (
     <SectionWrapper theme={theme}>
       <Heading theme={theme}>

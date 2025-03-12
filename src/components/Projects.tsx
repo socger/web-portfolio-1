@@ -1,6 +1,3 @@
-"use client";
-
-import { useTheme } from "next-themes";
 import Heading from "./Heading";
 import SectionWrapper from "./SectionWrapper";
 import data from "@/data/data_projects";
@@ -10,8 +7,13 @@ import Modal from "./Modal";
 import { useState } from "react";
 import { ProjectType } from "@/interfaces/interface_project_type";
 
-const Projects = () => {
-  const { theme } = useTheme();
+const Projects = (
+  {
+    theme
+  }: {
+    theme: string | undefined
+  }
+) => {
   const [state, setState] = useState(false);
   const [details, setDetails] = useState<ProjectType | null>(null);
 

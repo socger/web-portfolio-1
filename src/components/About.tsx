@@ -1,12 +1,14 @@
-"use client";
-
-import { useTheme } from "next-themes";
 import Heading from "./Heading";
 import data from "@/data/data_about";
 import SectionWrapper from "./SectionWrapper";
 
-const About = () => {
-  const { theme } = useTheme();
+const About = (
+  {
+    theme
+  }: {
+    theme: string | undefined
+  }
+) => {
   const { heading, bio } = data;
 
   return (
