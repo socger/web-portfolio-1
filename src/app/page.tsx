@@ -4,7 +4,7 @@ import About from "@/components/About";
 import Contacts from "@/components/Contacts";
 import Header from "@/components/Headers";
 import Projects from "@/components/Projects";
-import Reviews from "@/components/Reviews";
+import Testimonials from "@/components/Testimonials";
 import Skills from "@/components/Skills";
 import WorkHistory from "@/components/WorkHistory";
 import { useTheme } from "next-themes";
@@ -21,7 +21,7 @@ export default function Home() {
         <Skills theme={theme} />
         <WorkHistory theme={theme} />
         <Projects theme={theme} />
-        <Reviews theme={theme} />
+        <Testimonials theme={theme} />
       </div>
     </main>
   );
