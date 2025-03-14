@@ -42,8 +42,8 @@ const Testimonials = (
           <div 
             className={`
               absolute bottom-0 w-full h-full bg-gradient-to-t
-              ${theme === "dark" ? "from-black/80" : "from-white/80"}
-              to-transparent flex justify-center items-end
+              ${theme === "dark" ? "from-black/100" : "from-white/80"}
+              to-transparent flex justify-center items-end z-[9999] 
             `}
           >
             <button 
