@@ -26,7 +26,7 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "Jerónimo Pedro Sánchez Manzano",
-  description: "my name is jerónimo pedro sánchez manzano I am a full stack javascript & blockchain developer",
+  description: "My name is Jerónimo P. Sánchez Manzano. I am a full stack developer of several different technologies.",
 };
 
 export default function RootLayout({
