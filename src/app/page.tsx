@@ -26,9 +26,8 @@ export default function Home() {
           <Testimonials theme={theme} />
         </div>
       </main>
+
       <Footer theme={theme} />
-
     </>
-
   );
 }

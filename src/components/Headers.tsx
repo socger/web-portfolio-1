@@ -20,6 +20,10 @@ const Header = (
         flex flex-wrap md:flex-row flex-col items-center gap-y-9 gap-x-8 p-4 border-2 rounded-xl
         ${theme === 'dark' ? "border-white" : "border-violet-700"}
       `}
+      // className="
+      //   flex flex-wrap md:flex-row flex-col items-center gap-y-9 gap-x-8 p-4 border-2 rounded-xl
+      //   dark:border-white border-violet-700
+      // "
     >
       {/* *** Block Image *** */}
       <div className="w-[200px] md:w-[150px] h-[200px] md:h-[150px] relative rounded-full overflow-hidden">
