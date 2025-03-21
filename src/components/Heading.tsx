@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 const Heading = ({ 
   children, theme 
 }: { 
@@ -6,11 +8,12 @@ const Heading = ({
 }) => {
   return (
     <h3
-      className={`
-            capitalize text-base md:text-lg
-            ${theme === "dark" ? "text-zinc-400" : "text-violet-700"}
-            font-bold mb-3
-            `}
+      className={cn(
+        "capitalize text-base md:text-lg",
+        theme === 'dark' && "text-zinc-400",
+        theme !== 'dark' && "text-zinc-700",
+        "font-bold mb-3"
+      )}
     >
       {children}
     </h3>

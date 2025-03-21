@@ -2,8 +2,8 @@
 
 import { FaCloudMoon } from "react-icons/fa";
 import { useTheme } from "next-themes";
-import classNames from "classnames";
 import { LuSunMoon } from "react-icons/lu";
+import { cn } from "@/lib/utils";
 
 const DarkLight = () => {
   const { theme, setTheme } = useTheme();
@@ -15,11 +15,9 @@ const DarkLight = () => {
       className="fixed top-4 right-4 w-12 h-[18px] rounded-full bg-violet-300 flex items-center z-[999999]"
     >
       <span
-        className={classNames(
+        className={cn(
           "w-7 h-7 flex items-center justify-center bg-violet-700 rounded-full transition-all duration-500",
-          {
-            "ml-5": theme === "dark",
-          }
+          theme === 'dark' && "ml-5",
         )}
       >
         {theme === "light" ? (

@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 const SectionWrapper = ({ 
   children, theme 
 }: { 
@@ -6,11 +8,12 @@ const SectionWrapper = ({
 }) => {
     return (
       <section 
-        className={`
-          border-t py-7 mt-7
-          ${theme === "dark" ? "border-zinc-500" : "border-zinc-300"}
-          font-bold mb-3
-        `}
+        className={cn(
+          "border-t py-7 mt-7",
+          theme === 'dark' && "border-zinc-500",
+          theme !== 'dark' && "border-zinc-300",
+          "font-bold mb-3"
+        )}
       >
         {children}
       </section>

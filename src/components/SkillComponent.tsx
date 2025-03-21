@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const SkillComponent = ({
@@ -15,20 +15,19 @@ const SkillComponent = ({
 
   return (
     <div
-      className={`
-        flex items-center space-x-2
-        ${theme === "dark" ? "bg-zinc-600" : "bg-zinc-200"}
-        px-3 py-2
-      `}
+      className={cn(
+        "flex items-center space-x-2",
+        theme === 'dark' && "bg-zinc-600",
+        theme !== 'dark' && "bg-zinc-200",
+        "px-3 py-2"
+      )}
     >
       <div 
-        className={
-          classNames(
+        className={cn(
             "relative w-[25px] h-[25px]", 
-            { "bg-white rounded-full": skill.name === "next", },
-            { "bg-white rounded-full": skill.name === "express", }
-          )
-        }
+            skill.name === 'next' && "bg-white rounded-full",
+            skill.name === 'express' && "bg-white rounded-full",
+          )}
       >
         <Image
           src={skill.image}
@@ -40,11 +39,12 @@ const SkillComponent = ({
       </div>
 
       <span
-        className={`
-          text-sm md:text-base capitalize
-          ${theme === "dark" ? "text-white" : "text-zinc-700"}
-          font-bold
-        `}
+        className={cn(
+          "text-sm md:text-base capitalize",
+          theme === 'dark' && "text-white",
+          theme !== 'dark' && "text-zinc-700",
+          "font-bold"
+        )}
       >
         {skill.name}
       </span>

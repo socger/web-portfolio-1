@@ -3,6 +3,7 @@ import SectionWrapper from "./SectionWrapper";
 import data from "@/data/data_work";
 import Image from "next/image";
 import SkillComponent from "./SkillComponent";
+import { cn } from "@/lib/utils";
 
 const WorkHistory = (
   {
@@ -20,11 +21,12 @@ const WorkHistory = (
       {data.map((work) => (
         <div className="mt-6 flex gap-x-6" key={work.id}>
           <div 
-            className={`
-              relative w-[50px] h-[50px] rounded-full overflow-hidden border
-              ${theme === "dark" ? "bg-zinc-600" : "bg-zinc-200"}
-              px-3 py-2
-            `}
+            className={cn(
+              "relative w-[50px] h-[50px] rounded-full overflow-hidden border",
+              theme === 'dark' && "bg-zinc-600",
+              theme !== 'dark' && "bg-zinc-200",
+              "px-3 py-2"
+            )}
           >
             <Image
               src={work.image}
@@ -36,10 +38,11 @@ const WorkHistory = (
 
           <div className="flex-1">
             <h2 
-              className={`
-                capitalize font-bold text-base
-                ${theme === "dark" ? "text-white" : "text-black"}
-              `}
+              className={cn(
+                "capitalize font-bold text-base",
+                theme === 'dark' && "text-white",
+                theme !== 'dark' && "text-black",
+              )}
             >
               {work.role}
             </h2>
@@ -50,27 +53,30 @@ const WorkHistory = (
 
             <div className="flex items-center gap-x-1">
               <span 
-                className={`
-                  capitalize text-sm font-bold mt-[2px]
-                  ${theme === "dark" ? "text-white" : "text-black"}
-                `}
+                className={cn(
+                  "capitalize text-sm font-bold mt-[2px]",
+                  theme === 'dark' && "text-white",
+                  theme !== 'dark' && "text-black"
+                )}
               >
                 {work.type}
               </span>
 
               <span 
-                className={`
-                  ${theme === "dark" ? "text-white" : "text-black"}
-                `}
+                className={cn(
+                  theme === 'dark' && "text-white",
+                  theme !== 'dark' && "text-black"
+                )}
               >
                 -
               </span>
 
               <span 
-                className={`
-                  capitalize text-sm font-bold mt-[2px]
-                  ${theme === "dark" ? "text-white" : "text-black"}
-                `}
+                className={cn(
+                  "capitalize text-sm font-bold mt-[2px]",
+                  theme === 'dark' && "text-white",
+                  theme !== 'dark' && "text-black"
+                )}
               >
                 {work.date}
               </span>
@@ -93,11 +99,11 @@ const WorkHistory = (
                 {work?.options?.map((option, key ) => (
                   <li 
                     key={key} 
-                    // className="text-zinc-900 text-base font-semibold"
-                    className={`
-                      text-base font-semibold
-                      ${theme === "dark" ? "text-zinc-400" : "text-zinc-900"}
-                    `}
+                    className={cn(
+                      "text-base font-semibold",
+                      theme === 'dark' && "text-zinc-400",
+                      theme !== 'dark' && "text-zinc-900"
+                    )}
                   >
                     {option}
                   </li>

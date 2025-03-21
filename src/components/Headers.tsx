@@ -4,6 +4,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsTerminalFill } from "react-icons/bs";
 import { IoIosSchool } from "react-icons/io";
 import HeaderInfo from "./HeaderInfo";
+import { cn } from "@/lib/utils";
 
 const Header = (
   {
@@ -16,14 +17,11 @@ const Header = (
 
   return (
     <header 
-      className={`
-        flex flex-wrap md:flex-row flex-col items-center gap-y-9 gap-x-8 p-4 border-2 rounded-xl
-        ${theme === 'dark' ? "border-white" : "border-violet-700"}
-      `}
-      // className="
-      //   flex flex-wrap md:flex-row flex-col items-center gap-y-9 gap-x-8 p-4 border-2 rounded-xl
-      //   dark:border-white border-violet-700
-      // "
+      className={cn(
+        "flex flex-wrap md:flex-row flex-col items-center gap-y-9 gap-x-8 p-4 border-2 rounded-xl",
+        theme === 'dark' && "border-white",
+        theme !== 'dark' && "border-violet-700"
+      )}
     >
       {/* *** Block Image *** */}
       <div className="w-[200px] md:w-[150px] h-[200px] md:h-[150px] relative rounded-full overflow-hidden">
@@ -39,23 +37,23 @@ const Header = (
       <div className="flex-1">
 
         {/* ** Section Name ** */}
-        {/* <h1 className="text-5xl font-black capitalize text-violet-700 dark:!text-white"> ... NO FUNCIONA dark:text-white */}
         <h1 
-          className={`
-            text-4xl md:text-5xl font-black capitalize
-            ${theme === 'dark' ? "text-white" : "text-violet-700"}
-          `}
+          className={cn(
+            "text-4xl md:text-5xl font-black capitalize",
+            theme === 'dark' && "text-white",
+            theme !== 'dark' && "text-violet-700"
+          )}
         >
           {name}
         </h1>
 
         {/* ** Section jobTitle ** */}
-        {/* <h3 className="mt-2 text-xl font-bold capitalize text-gray-500 dark:text-zinc-400"> ... NO FUNCIONA dark:text-zinc-400 */}
         <h3 
-          className={`
-            mt-2 text-lg md:text-xl font-semibold md:font-bold capitalize 
-            ${theme === 'dark' ? "text-zinc-400" : "text-zinc-700"}
-          `}
+          className={cn(
+            "mt-2 text-lg md:text-xl font-semibold md:font-bold capitalize",
+            theme === 'dark' && "text-zinc-400",
+            theme !== 'dark' && "text-zinc-700"
+          )}
         >
           {jobTitle}
         </h3>
@@ -65,9 +63,10 @@ const Header = (
           <HeaderInfo
             Icon={ 
               <FaMapMarkerAlt 
-                className={`
-                  ${theme === 'dark' ? "text-zinc-400" : "text-violet-700"}
-                `} 
+                className={cn(
+                  theme === 'dark' && "text-zinc-400",
+                  theme !== 'dark' && "text-zinc-700"
+                )} 
                 size={16}
               />
             } 
@@ -78,9 +77,10 @@ const Header = (
           <HeaderInfo
             Icon={ 
               <BsTerminalFill 
-                className={`
-                  ${theme === 'dark' ? "text-zinc-400" : "text-violet-700"}
-                `} 
+                className={cn(
+                  theme === 'dark' && "text-zinc-400",
+                  theme !== 'dark' && "text-zinc-700"
+                )} 
                 size={16} 
               />
             } 
@@ -91,9 +91,10 @@ const Header = (
           <HeaderInfo
             Icon={ 
               <IoIosSchool 
-                className={`
-                  ${theme === 'dark' ? "text-zinc-400" : "text-violet-700"}
-                `} 
+                className={cn(
+                  theme === 'dark' && "text-zinc-400",
+                  theme !== 'dark' && "text-zinc-700"
+                )} 
                 size={16} 
               />
             } 

@@ -5,6 +5,7 @@ import SkillComponent from "./SkillComponent";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 import { TfiWorld } from "react-icons/tfi";
+import { cn } from "@/lib/utils";
 
 const Modal = (
   { state,
@@ -23,22 +24,23 @@ const Modal = (
       className="fixed inset-0 w-full h-screen bg-black/25 p-4 backdrop-blur z-[9999999] flex items-center justify-center"
     >
       <MdClose 
-        className={`
-          cursor-pointer text-[25px] absolute top-6 right-6
-          ${theme === "dark" ? "text-white" : "text-black"}
-          leading-[25px]
-        `}
+        className={cn(
+          "cursor-pointer text-[25px] absolute top-6 right-6",
+          theme === 'dark' && "text-white",
+          theme !== 'dark' && "text-black0",
+          "leading-[25px]"
+        )}
         onClick={toggleModal}
       />
 
       <div 
-        className={`
-          max-w-screen-xl w-full 
-          ${theme === "dark" ? "bg-zinc-900" : "bg-white"}
-          p-6 rounded-lg border 
-          ${theme === "dark" ? "border-zinc-700" : "border-zinc-100"}
-          max-h-[80vh] overflow-x-auto
-        `}
+        className={cn(
+          "max-w-screen-xl w-full",
+          "p-6 rounded-lg border",
+          theme === 'dark' && "bg-zinc-900 border-zinc-700",
+          theme !== 'dark' && "bg-white border-zinc-100",
+          "max-h-[80vh] overflow-x-auto"
+        )}
   
       >
         <div className="flex flex-wrap  lg:space-x-6">
@@ -55,11 +57,12 @@ const Modal = (
 
             <div className="flex-1 mt-5 lg:mt-0">
               <h2
-                className={`
-                  text-xl md:text-2xl font-bold 
-                  ${theme === "dark" ? "text-zinc-200" : "text-zinc-700"}
-                  leading-[25px]
-                `}
+                className={cn(
+                  "text-xl md:text-2xl font-bold",
+                  theme === 'dark' && "text-zinc-200",
+                  theme !== 'dark' && "text-zinc-700",
+                  "leading-[25px]"
+                )}
               >
                 {details?.title}
               </h2>
@@ -80,26 +83,28 @@ const Modal = (
                 <Link 
                   href={details?.source_code || ''} 
                   target="_blank" 
-                  className={`
-                    flex items-center space-x-2
-                    ${theme === "dark" 
-                      ? "bg-zinc-600 text-white" 
-                      : "bg-zinc-200 text-black"
-                    }
-                    px-3 py-2 
-                  `}
+                  className={cn(
+                    "flex items-center space-x-2",
+                    theme === 'dark' && "bg-zinc-600 text-white",
+                    theme !== 'dark' && "bg-zinc-200 text-black",
+                    "px-3 py-2"
+                  )}
                 >
                   <FaGithub
                     size={18} 
-                    className={ `${theme === "dark" ? "text-white" : "text-black"} `} 
+                    className={cn(
+                      theme === 'dark' && "text-white",
+                      theme !== 'dark' && "text-black"
+                    )} 
                   />
 
                   <span 
-                    className={`
-                      text-sm md:text-base capitalize
-                      ${theme === "dark" ? "text-white" : "text-zinc-700"}
-                      font-bold
-                    `}
+                    className={cn(
+                      "text-sm md:text-base capitalize",
+                      theme === 'dark' && "text-white",
+                      theme !== 'dark' && "text-zinc-700",
+                      "font-bold"
+                    )}
                   >
                     source code
                   </span>
@@ -108,37 +113,40 @@ const Modal = (
                 <Link 
                   href={details?.demo || ''} 
                   target="_blank" 
-                  className={`
-                    flex items-center space-x-2
-                    ${theme === "dark" 
-                      ? "bg-zinc-600 text-white" 
-                      : "bg-zinc-200 text-black"
-                    }
-                    px-3 py-2 
-                  `}
+                  className={cn(
+                    "flex items-center space-x-2",
+                    theme === 'dark' && "bg-zinc-600 text-white",
+                    theme !== 'dark' && "bg-zinc-200 text-black",
+                    "px-3 py-2"
+                  )}
                 >
                   <TfiWorld
                     size={18} 
-                    className={ `${theme === "dark" ? "text-white" : "text-black"} `} 
+                    className={cn(
+                      theme === 'dark' && "text-white",
+                      theme !== 'dark' && "text-black"
+                    )} 
                   />
 
                   <span 
-                    className={`
-                      text-sm md:text-base capitalize
-                      ${theme === "dark" ? "text-white" : "text-zinc-700"}
-                      font-bold
-                    `}
+                    className={cn(
+                      "text-sm md:text-base capitalize",
+                      theme === 'dark' && "text-white",
+                      theme !== 'dark' && "text-zinc-700",
+                      "font-bold"
+                    )}
                   >
                     demo
                   </span>
                 </Link>
 
                 <p 
-                  className={`
-                    text-base font-medium capitalize
-                    ${theme === "dark" ? "text-zinc-400" : "text-zinc-700"}
-                    leading-[20px] mt-6
-                  `}
+                  className={cn(
+                    "text-base font-medium capitalize",
+                      theme === 'dark' && "text-zinc-400",
+                      theme !== 'dark' && "text-zinc-700",
+                    "leading-[20px] mt-6"
+                  )}
                 >
                   {details?.description}
                 </p>

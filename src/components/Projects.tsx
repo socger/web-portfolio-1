@@ -6,6 +6,7 @@ import { RxOpenInNewWindow } from "react-icons/rx";
 import Modal from "./Modal";
 import { useState } from "react";
 import { ProjectType } from "@/interfaces/interface_project_type";
+import { cn } from "@/lib/utils";
 
 const Projects = (
   {
@@ -50,21 +51,23 @@ const Projects = (
             <div className="flex-1">
               <div className="flex space-x-3">
                 <h2
-                  className={`
-                    text-lg md:text-xl font-bold 
-                    ${theme === "dark" ? "text-zinc-200" : "text-zinc-700"}
-                    leading-[25px]
-                  `}
+                  className={cn(
+                    "text-lg md:text-xl font-bold",
+                    theme === 'dark' && "text-zinc-200",
+                    theme !== 'dark' && "text-zinc-700",
+                    "leading-[25px]"
+                  )}
                 >
                   {project.title}
                 </h2>
 
                 <RxOpenInNewWindow 
-                  className={`
-                    text-[20px]
-                    ${theme === "dark" ? "text-white" : "text-zinc-900"}
-                    cursor-pointer
-                  `}
+                  className={cn(
+                    "text-[20px]",
+                    theme === 'dark' && "text-white",
+                    theme !== 'dark' && "text-zinc-900",
+                    "cursor-pointer"
+                  )}
                   onClick={() => {
                     toggleModal();
                     setDetails(project);
@@ -73,11 +76,12 @@ const Projects = (
               </div>
 
               <p 
-                className={`
-                  text-base font-semibold
-                  ${theme === "dark" ? "text-zinc-400" : "text-zinc-500"}
-                  mt-2
-                `}
+                className={cn(
+                  "text-base font-semibold",
+                  theme === 'dark' && "text-zinc-400",
+                  theme !== 'dark' && "text-zinc-500",
+                  "mt-2"
+                )}
               >
                 { 
                   project.description.length > 100 
