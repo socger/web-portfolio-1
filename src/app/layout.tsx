@@ -26,8 +26,8 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Jerónimo Pedro Sánchez Manzano",
-  description: "My name is Jerónimo P. Sánchez Manzano. I am a full stack developer of several different technologies.",
+  title: "Jerónimo Sánchez - SOCGER",
+  description: "socger official portfolio.",
 };
 
 export default function RootLayout({
